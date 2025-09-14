@@ -22,6 +22,34 @@ greet calculator blog:
 #	go build -o ${BIN_DIR}/$@/${SERVER_BIN} ./$@/${SERVER_DIR}
 #	go build -o ${BIN_DIR}/$@/${CLIENT_BIN} ./$@/${CLIENT_DIR}
 
+greet_server_build:
+	go build -o ./bin/greet/server/ ./greet/server/*
+
+greet_client_build:
+	go build -o ./bin/greet/client/ ./greet/client/*
+
+greet_server_run:
+	go run ./bin/greet/server/*
+
+greet_client_run:
+	go run ./bin/greet/client/*
+
+calculator_server_build:
+	go build -o ./bin/calculator/server/ ./calculator/server
+
+calculator_client_build:
+	go build -o ./bin/calculator/client/ ./calculator/client
+
+calculator_server_run:
+	go run ./calculator/server/*
+
+calculator_client_run:
+	go run ./calculator/client/*
+
+
+
+
+
 about:
 	@echo "Shell: ${SHELL}"
 	@echo "Protoc version: $(shell protoc --version)"

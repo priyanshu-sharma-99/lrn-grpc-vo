@@ -20,7 +20,9 @@ func main() {
 	log.Println("connected to the remote server")
 
 	c := pb.NewGreetServiceClient(conn)
+
 	doGreet(c)
+	doGreetManyTimes(c)
 
 	log.Println("closing greetclient connection")
 	defer conn.Close()

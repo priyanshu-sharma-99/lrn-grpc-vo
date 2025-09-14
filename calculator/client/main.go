@@ -22,6 +22,7 @@ func main() {
 	c := pb.NewCalculatorServiceClient(conn)
 
 	callSum(c)
+	doPrimes(c)
 
 	log.Println("closing calculatorClient connection")
 	defer conn.Close()
