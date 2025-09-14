@@ -25,6 +25,8 @@ func main() {
 	doGreetManyTimes(c)
 	doLongGreet(c)
 	doGreetBidirectional(c)
+	doGreetWithDeadline(c)
+
 	log.Println("closing greetclient connection")
 	defer conn.Close()
 }
