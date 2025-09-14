@@ -23,28 +23,36 @@ greet calculator blog:
 #	go build -o ${BIN_DIR}/$@/${CLIENT_BIN} ./$@/${CLIENT_DIR}
 
 greet_server_build:
-	go build -o ./bin/greet/server/ ./greet/server/*
+	- rm -rf ./bin/greet/server
+	mkdir -p ./bin/greet/server/
+	go build -o ./bin/greet/server/greet_server ./greet/server
 
 greet_client_build:
-	go build -o ./bin/greet/client/ ./greet/client/*
+	- rm -r ./bin/greet/client
+	mkdir -p ./bin/greet/client/
+	go build -o ./bin/greet/client/greet_client ./greet/client
 
 greet_server_run:
-	go run ./bin/greet/server/*
+	./bin/greet/server/greet_server
 
 greet_client_run:
-	go run ./bin/greet/client/*
+	./bin/greet/client/greet_client
 
 calculator_server_build:
-	go build -o ./bin/calculator/server/ ./calculator/server
+	- rm -rf ./bin/calculator/server
+	mkdir -p ./bin/calculator/server
+	go build -o ./bin/calculator/server/calculator_server ./calculator/server
 
 calculator_client_build:
-	go build -o ./bin/calculator/client/ ./calculator/client
+	- rm -rf ./bin/calculator/client
+	mkdir -p ./bin/calculator/client
+	go build -o ./bin/calculator/client/calculator_client ./calculator/client
 
 calculator_server_run:
-	go run ./calculator/server/*
+	./calculator/server/calculator_server
 
 calculator_client_run:
-	go run ./calculator/client/*
+	./calculator/client/calculator_client
 
 
 
