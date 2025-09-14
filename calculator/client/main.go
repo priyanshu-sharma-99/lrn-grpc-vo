@@ -23,7 +23,7 @@ func main() {
 
 	callSum(c)
 	doPrimes(c)
-
+	doAvg(c)
 	log.Println("closing calculatorClient connection")
 	defer conn.Close()
 }

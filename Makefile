@@ -49,13 +49,10 @@ calculator_client_build:
 	go build -o ./bin/calculator/client/calculator_client ./calculator/client
 
 calculator_server_run:
-	./calculator/server/calculator_server
+	./bin/calculator/server/calculator_server
 
 calculator_client_run:
-	./calculator/client/calculator_client
-
-
-
+	./bin/calculator/client/calculator_client
 
 
 about:
