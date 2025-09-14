@@ -24,6 +24,7 @@ func main() {
 	callSum(c)
 	doPrimes(c)
 	doAvg(c)
+	doSqrt(c, -16)
 	log.Println("closing calculatorClient connection")
 	defer conn.Close()
 }
