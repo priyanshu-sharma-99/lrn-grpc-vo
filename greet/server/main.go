@@ -7,6 +7,7 @@ import (
 	pb "github.com/priyanshu-sharma-99/lrn-grpc-v0/greet/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/reflection"
 )
 
 var add string = "0.0.0.0:50051"
@@ -22,7 +23,7 @@ func main() {
 	}
 
 	log.Printf("server listening at %v", lis.Addr())
-	tls := true
+	tls := false
 
 	opts := []grpc.ServerOption{}
 
@@ -42,6 +43,7 @@ func main() {
 	s := grpc.NewServer(opts...)
 
 	pb.RegisterGreetServiceServer(s, &Server{})
+	reflection.Register(s)
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
